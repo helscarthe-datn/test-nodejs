@@ -9,3 +9,5 @@ spec:
   type: service
   owner: "user:default/helscarthe"
   lifecycle: experimental
+  dependsOn:
+    - "component:default/test-nodejs-2"
