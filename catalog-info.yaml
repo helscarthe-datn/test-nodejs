@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "test-nodejs"
+  annotations:
+    prometheus.io/rule: instance:node_cpu_utilization:percent{AppName="test-nodejs"}|instance,instance:node_memory_utilization:percent{AppName="test-nodejs"}|instance,instance:node_load1:ratio{AppName="test-nodejs"}|instance,instance:process_resident_memory:bytes{AppName="test-nodejs"}|instance,instance:process_open_fds:count{AppName="test-nodejs"}|instance,instance:node_network_receive_bytes:rate5m{AppName="test-nodejs"}|instance,instance:node_disk_written_bytes:rate5m{AppName="test-nodejs"}|instance,instance:node_uptime:seconds{AppName="test-nodejs"}|instance,instance:node_vmstat_oom_kill:count{AppName="test-nodejs"}|instance
+    prometheus.io/alert: AppName="test-nodejs"
+spec:
+  type: service
+  owner: "user:default/helscarthe"
+  lifecycle: experimental
